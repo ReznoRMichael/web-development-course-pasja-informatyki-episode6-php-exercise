@@ -3,4 +3,4 @@
 	$host = "localhost";
 	$user = "root";
 	$pass = "";
-	$db = "szkola";
+	$db = "reznor_school_db";

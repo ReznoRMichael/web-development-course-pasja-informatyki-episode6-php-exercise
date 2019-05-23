@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.0
+-- version 4.7.3
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Czas generowania: 08 Sty 2019, 10:19
--- Wersja serwera: 10.1.31-MariaDB
--- Wersja PHP: 7.2.4
+-- Host: reznortejhadmin.mysql.db
+-- Generation Time: May 23, 2019 at 11:43 PM
+-- Server version: 5.6.43-log
+-- PHP Version: 7.0.33
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -19,25 +19,25 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Baza danych: `szkola`
+-- Database: `reznortejhadmin`
 --
 
 -- --------------------------------------------------------
 
 --
--- Struktura tabeli dla tabeli `klasa`
+-- Table structure for table `reznor_school_class`
 --
 
-CREATE TABLE `klasa` (
+CREATE TABLE `reznor_school_class` (
   `id` int(11) NOT NULL,
   `nazwa` tinytext CHARACTER SET utf8 NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Zrzut danych tabeli `klasa`
+-- Dumping data for table `reznor_school_class`
 --
 
-INSERT INTO `klasa` (`id`, `nazwa`) VALUES
+INSERT INTO `reznor_school_class` (`id`, `nazwa`) VALUES
 (1, '1a'),
 (2, '1b'),
 (3, '2a'),
@@ -46,10 +46,10 @@ INSERT INTO `klasa` (`id`, `nazwa`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktura tabeli dla tabeli `uczen`
+-- Table structure for table `reznor_school_student`
 --
 
-CREATE TABLE `uczen` (
+CREATE TABLE `reznor_school_student` (
   `id` int(2) NOT NULL,
   `Nazwisko` tinytext,
   `Imie` tinytext,
@@ -58,10 +58,10 @@ CREATE TABLE `uczen` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Zrzut danych tabeli `uczen`
+-- Dumping data for table `reznor_school_student`
 --
 
-INSERT INTO `uczen` (`id`, `Nazwisko`, `Imie`, `Srednia_ocen`, `id_klasy`) VALUES
+INSERT INTO `reznor_school_student` (`id`, `Nazwisko`, `Imie`, `Srednia_ocen`, `id_klasy`) VALUES
 (1, 'Kluska', 'Zenon', 4.5, 1),
 (2, 'Zawada', 'Zbigniew', 3.6, 1),
 (3, 'Cap', 'Antoni', 3.5, 2),
@@ -92,46 +92,46 @@ INSERT INTO `uczen` (`id`, `Nazwisko`, `Imie`, `Srednia_ocen`, `id_klasy`) VALUE
 -- --------------------------------------------------------
 
 --
--- Struktura tabeli dla tabeli `wychowawca`
+-- Table structure for table `reznor_school_teacher`
 --
 
-CREATE TABLE `wychowawca` (
+CREATE TABLE `reznor_school_teacher` (
   `id` int(11) NOT NULL,
   `imie` tinytext CHARACTER SET utf8 NOT NULL,
   `nazwisko` tinytext CHARACTER SET utf8 NOT NULL,
   `id_klasy` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Zrzut danych tabeli `wychowawca`
+-- Dumping data for table `reznor_school_teacher`
 --
 
-INSERT INTO `wychowawca` (`id`, `imie`, `nazwisko`, `id_klasy`) VALUES
+INSERT INTO `reznor_school_teacher` (`id`, `imie`, `nazwisko`, `id_klasy`) VALUES
 (1, 'Jan', 'Bogucki', 1),
 (2, 'Michał', 'Więcek', 2),
 (3, 'Bożena', 'Michalska', 3),
 (4, 'Krystyna', 'Piętkiewicz', 4);
 
 --
--- Indeksy dla zrzutów tabel
+-- Indexes for dumped tables
 --
 
 --
--- Indeksy dla tabeli `klasa`
+-- Indexes for table `reznor_school_class`
 --
-ALTER TABLE `klasa`
+ALTER TABLE `reznor_school_class`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeksy dla tabeli `uczen`
+-- Indexes for table `reznor_school_student`
 --
-ALTER TABLE `uczen`
+ALTER TABLE `reznor_school_student`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeksy dla tabeli `wychowawca`
+-- Indexes for table `reznor_school_teacher`
 --
-ALTER TABLE `wychowawca`
+ALTER TABLE `reznor_school_teacher`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -139,23 +139,20 @@ ALTER TABLE `wychowawca`
 --
 
 --
--- AUTO_INCREMENT dla tabeli `klasa`
+-- AUTO_INCREMENT for table `reznor_school_class`
 --
-ALTER TABLE `klasa`
+ALTER TABLE `reznor_school_class`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
-
 --
--- AUTO_INCREMENT dla tabeli `uczen`
+-- AUTO_INCREMENT for table `reznor_school_student`
 --
-ALTER TABLE `uczen`
+ALTER TABLE `reznor_school_student`
   MODIFY `id` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
-
 --
--- AUTO_INCREMENT dla tabeli `wychowawca`
+-- AUTO_INCREMENT for table `reznor_school_teacher`
 --
-ALTER TABLE `wychowawca`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
-COMMIT;
+ALTER TABLE `reznor_school_teacher`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

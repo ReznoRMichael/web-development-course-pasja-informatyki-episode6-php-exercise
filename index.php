@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="pl">
+<html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Dziennik szkolny</title>
+    <title>School Journal</title>
 	
     <meta http-equiv="X-Ua-Compatible" content="IE=edge">
     <link rel="stylesheet" href="main.css">
@@ -11,15 +11,18 @@
 
 <body>
 
-<form action="index.php" method="post">
+	<div id="container">
 
-	<label>
-		Type the class name: <input type="text" name="class">
-	</label>
+		<form action="index.php" method="post">
+			<label>
+				<p>Type the class name:</p>
+				<p><input type="text" name="class"></p>
+			</label>
+			<p><input type="submit" value="Show marks"></p>
+			<p>Available classes: 1a, 1b, 2a, 2b</p>
+		</form>
+
 	
-	<input type="submit" value="Show marks">
-
-</form>
 
 <?php
 	
@@ -32,7 +35,7 @@
 		else
 		{
 			//include "dbconnect.php"; // include_once, require_once
-			require_once "dbconnect.php"; // once unika redefinicji
+			require_once "dbconnect-reznor.php"; // once unika redefinicji
 			
 			$conn = mysqli_connect($host, $user , $pass, $db) or die("Connection error"); // połącz się lub umrzyj
 			
@@ -49,7 +52,7 @@
 			
 			$class = $_POST["class"];
 			
-			$q = "SELECT Imie, Nazwisko, Srednia_ocen FROM uczen, klasa WHERE nazwa='$class' AND klasa.id = uczen.id_klasy";
+			$q = "SELECT nazwa, Imie, Nazwisko, Srednia_ocen FROM reznor_school_student, reznor_school_class WHERE nazwa='$class' AND reznor_school_class.id = reznor_school_student.id_klasy";
 			
 			$result = mysqli_query($conn, $q) or die("Database read error");
 			
@@ -62,9 +65,10 @@
 			else
 			{
 echo<<<END
-<table>
+<table id="result-table">
 	<thead>
 		<tr>
+			<th>Class</th>
 			<th>Name</th>
 			<th>Surname</th>
 			<th>Average mark</th>
@@ -94,9 +98,11 @@ echo<<<END
 </table>
 END;
 
-			echo "<p>Average class marks: ".round($suma/$ile, 2)."</p>";
-			var_dump($suma);
-			var_dump($ile);
+			echo "<p>Average class mark of all students: <b>".round($suma/$ile, 2)."</b></p>";
+			echo "<p>Sum of average marks of all students: <b>".$suma."</b></p>";
+			echo "<p>Number of all students in class <b>".$class."</b> : <b>".$ile."</b></p>";
+			//var_dump($suma);
+			//var_dump($ile);
 			
 			}	
 			
@@ -107,6 +113,7 @@ END;
 	
 	
 ?>
+	</div> <!-- End container -->
 
 </body>
 </html>
