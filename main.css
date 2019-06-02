@@ -1,37 +1,69 @@
+*
+{
+	font-family: 'Open Sans', sans-serif;
+}
+a, a:active, a:focus, a:visited
+{
+	color: #c28f7a;
+}
+a:hover
+{
+	color: #dd9e83;
+}
 body
 {
 	padding: 30px;
 	background-color: #29201B;
 	color: #efefef;
-    font-family: 'Open Sans', sans-serif;
 	font-size: 17px;
 	text-align: center;
 }
 #container
 {
+	display: flex;
+	flex-direction: column;
 	margin: auto;
 	max-width: 500px;
-	margin-top: 5%;
+	margin-top: 1%;
 }
 #result-table
 {
 	margin: auto;
 }
-
 form
 {
 	margin-bottom: 20px;
 }
-
 table
 {
 	border-spacing: 0;
 	border-collapse: collapse;
 }
-
 th, td
 {
 	border: 1px solid white;
 	padding: 5px;
 	text-align: center;
+}
+p
+{
+	margin-block-start: 0.5em;
+    margin-block-end: 0.5em;
+}
+.error
+{
+	color: #b45e39;
+}
+.valid
+{
+	color: #5c8b35;
+}
+.g-recaptcha
+{
+	display: flex;
+	justify-content: center;
+}
+.form-element
+{
+	margin: 15px auto 15px auto;
 }
