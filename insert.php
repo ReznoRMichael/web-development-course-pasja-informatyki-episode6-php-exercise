@@ -93,6 +93,8 @@ if(isset($_POST["class"]))
     <meta http-equiv="X-Ua-Compatible" content="IE=edge">
     <link rel="stylesheet" href="main.css">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap" rel="stylesheet">
+    <link rel="icon" href="favicon.png">
+    <script src="cookiealert/cookiealert_1_2.js"></script><script>CookieAlert.init();</script>
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
 </head>

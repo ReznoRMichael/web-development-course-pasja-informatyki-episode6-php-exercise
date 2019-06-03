@@ -7,6 +7,8 @@
     <meta http-equiv="X-Ua-Compatible" content="IE=edge">
 	<link rel="stylesheet" href="main.css">
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap" rel="stylesheet">
+	<link rel="icon" href="favicon.png">
+	<script src="cookiealert/cookiealert_1_2.js"></script><script>CookieAlert.init();</script>
 
 </head>
 
@@ -20,13 +22,15 @@
 
 		<form action="index.php" method="post">
 
-			<label for="class"> Select the class name: </label>
+			<div class="form-element">
+				<label for="class"> Select the class name: </label>
 				<select id="class" name="class">
 
 					<option value=""></option>
 					<?php include_once "show.php"; ?>
 				
 				</select>
+			</div>
 			
 			<p><input type="submit" value="Show marks"></p>
 		</form>

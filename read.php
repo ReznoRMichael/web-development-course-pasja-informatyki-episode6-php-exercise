@@ -3,7 +3,7 @@ if(isset($_POST["class"]))
 {
     if(empty($_POST["class"]))
     {
-        echo "<span style='color:white'>Please enter a class.</span>";
+        echo "<p>Please enter a class.</p>";
     }
     else
     {
@@ -28,7 +28,7 @@ if(isset($_POST["class"]))
         
         if(!$numRows)
         {
-            echo "<span style='color:red'>This class name doesn't exist!</span>";
+            echo "<p style='color:red'>This class name doesn't exist!</p>";
         }
         else
         {
