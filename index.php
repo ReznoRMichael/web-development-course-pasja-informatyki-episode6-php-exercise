@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>School Journal</title>
+    <title>Student Database</title>
 	
     <meta http-equiv="X-Ua-Compatible" content="IE=edge">
 	<link rel="stylesheet" href="main.css">
@@ -16,7 +16,7 @@
 
 	<div id="container">
 
-	<h1>School Journal</h1>
+	<h1>Student Database</h1>
 
 	<p><a href="./">List students</a> | <a href="insert.php">Insert students</a></p>
 

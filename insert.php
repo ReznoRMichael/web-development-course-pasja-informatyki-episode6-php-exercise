@@ -103,7 +103,7 @@ if(isset($_POST["class"]))
 
 	<div id="container">
 
-        <h1>School Journal</h1>
+        <h1>Student Database</h1>
 
         <p><a href="./">List students</a> | <a href="insert.php">Insert students</a></p>
 
